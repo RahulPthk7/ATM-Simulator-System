@@ -62,9 +62,7 @@ java -cp "build/classes;lib/jcalendar-1.4.jar;lib/jgoodies-common-1.2.0.jar;lib/
 
 ## 🎯 Usage
 
-### Test Account
-- **Card Number**: `4532123456789000`
-- **PIN**: `1234`
+
 
 ### Creating New Account
 1. Click "SIGN UP" on the login screen
