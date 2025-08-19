@@ -1,221 +1,113 @@
-# ATM Simulator System
+# ATM Simulator System - Web Demo
 
-A comprehensive Java-based ATM (Automated Teller Machine) simulator system with a graphical user interface and MySQL database integration.
-
-## 🏧 Features
-
-- **User Authentication**: Secure login system with card number and PIN
-- **Account Management**: Complete user registration process (3-step signup)
-- **Banking Operations**:
-  - Deposit Money
-  - Cash Withdrawal
-  - Fast Cash (preset amounts)
-  - Balance Enquiry
-  - Mini Statement (transaction history)
-  - PIN Change
-- **Professional GUI**: ATM-like interface with custom graphics
-- **Database Integration**: MySQL database for data persistence
-- **Transaction History**: Complete audit trail of all operations
-
-## 🛠️ Technologies Used
-
-- **Java Swing**: For GUI development
-- **MySQL**: Database management
-- **JDBC**: Database connectivity
-- **JCalendar**: Date picker component
-- **JGoodies**: Enhanced look and feel
-
-## 📋 Prerequisites
-
-- Java JDK 8 or higher
-- MySQL Server 8.0 or higher
-- MySQL JDBC Driver (included in lib/)
-
-## 🚀 Installation & Setup
-
-### 1. Database Setup
-```sql
--- Create database
-CREATE DATABASE IF NOT EXISTS bankmanagementsystem;
-
--- Use the database
-USE bankmanagementsystem;
-
--- The application will create the required tables automatically
-```
-
-### 2. Database Configuration
-Update the database connection in `src/ASimulatorSystem/Conn.java`:
-```java
-c = DriverManager.getConnection("jdbc:mysql:///bankmanagementsystem", "root", "YOUR_PASSWORD");
-```
-
-### 3. Compilation
-```bash
-javac -cp ".;lib/jcalendar-1.4.jar;lib/jgoodies-common-1.2.0.jar;lib/jgoodies-looks-2.4.1.jar;mysql-connector-j-8.2.0.jar" -d build/classes src/ASimulatorSystem/*.java
-```
-
-### 4. Running the Application
-```bash
-java -cp "build/classes;lib/jcalendar-1.4.jar;lib/jgoodies-common-1.2.0.jar;lib/jgoodies-looks-2.4.1.jar;mysql-connector-j-8.2.0.jar" ASimulatorSystem.Login
-```
-
-## 🎯 Usage
-
-### Test Account
-- **Card Number**: `4532123456789000`
-- **PIN**: `1234`
-
-### Creating New Account
-1. Click "SIGN UP" on the login screen
-2. Complete the 3-step registration process:
-   - Personal Details (Name, DOB, Address, etc.)
-   - Additional Information (Religion, Income, Education, etc.)
-   - Account Details (Account Type, Services)
-3. Receive your new card number and PIN
-4. Login and start using ATM services
-
-## 📁 Project Structure
-
-```
-# 🏧 ATM Simulator System
-
-A comprehensive ATM (Automated Teller Machine) simulator implemented in both **Java Swing** (desktop) and **HTML/CSS/JavaScript** (web) versions.
-
-## 🌟 Live Demos
-
-### 🌐 Web Version (GitHub Pages)
-**Try it now**: `https://YOUR-USERNAME.github.io/atm-simulator-system/`
-
-**Demo Accounts**:
-- Card: `1234567812345678`, PIN: `1234` (Balance: $5,000)
-- Card: `9876543210987654`, PIN: `9876` (Balance: $2,500)
-
-### ☁️ Java Version (Render)
-**Access**: `https://your-app-name.onrender.com` (After deployment)
-
----
+## 🏧 Live Demo
+Access the live ATM simulator at: **[Your GitHub Pages URL will appear here after deployment]**
 
 ## 📋 Features
+- **User Authentication**: Secure login with card number and PIN
+- **Account Creation**: Create new accounts with initial deposit
+- **Transaction Management**: 
+  - Deposit money
+  - Withdraw money
+  - Fast cash withdrawal
+  - Balance enquiry
+  - Mini statement with transaction history
+  - PIN change functionality
+- **Responsive Design**: Works on desktop, tablet, and mobile devices
+- **Local Storage**: Data persists between browser sessions
 
-### Core Functionality
-- ✅ **User Authentication** - Secure login with card number and PIN
-- ✅ **Account Management** - Create new accounts with initial deposits
-- ✅ **Money Transactions**:
-  - 💰 Deposit funds
-  - 🏧 Withdraw cash
-  - ⚡ Fast cash (preset amounts)
-  - 💳 Balance enquiry
-  - 📄 Mini statement with transaction history
-  - 🔒 PIN change functionality
+## 🚀 Demo Accounts
+For testing purposes, use these demo accounts:
 
-### Technical Features
-- ✅ **Dual Implementation**: Java desktop app + Web application
-- ✅ **Database Integration**: MySQL support for Java version
-- ✅ **Local Storage**: Browser-based storage for web version
-- ✅ **Responsive Design**: Works on desktop, tablet, and mobile
-- ✅ **Cloud Deployment**: Ready for GitHub Pages and Render
+| Card Number | PIN | Initial Balance |
+|-------------|-----|-----------------|
+| 1234567812345678 | 1234 | $5,000.00 |
+| 9876543210987654 | 9876 | $2,500.00 |
 
----
+## 💻 Technology Stack
+- **HTML5**: Structure and semantic markup
+- **CSS3**: Modern styling with flexbox/grid and animations
+- **Vanilla JavaScript**: Core functionality and localStorage integration
+- **Responsive Design**: Mobile-first approach
 
-## 🚀 Quick Start
+## 🎨 Design Features
+- Modern gradient backgrounds
+- Smooth animations and transitions
+- ATM-like interface for transactions
+- Modal dialogs for forms
+- Color-coded transaction history
+- Success/error message system
 
-### Web Version (Instant Access)
-1. Open `docs/index.html` in your browser
-2. Use demo credentials to login
-3. Explore all ATM features
+## 📱 Browser Compatibility
+- Chrome 60+
+- Firefox 55+
+- Safari 12+
+- Edge 79+
 
-### Java Version (Local Setup)
-1. Ensure you have Java 8+ installed
-2. Open in NetBeans IDE or compile manually:
+## 🔧 Local Development
+1. Clone this repository
+2. Navigate to the `docs` folder
+3. Open `index.html` in your browser
+4. Or serve locally with a simple HTTP server:
    ```bash
-   javac -cp "lib/*" src/ASimulatorSystem/*.java
-   java -cp "src:lib/*" ASimulatorSystem.Login
+   # Python
+   python -m http.server 8000
+   
+   # Node.js
+   npx serve .
+   
+   # PHP
+   php -S localhost:8000
    ```
 
----
+## 📚 Usage Guide
 
-## 📖 Deployment Guide
-**See [`DEPLOYMENT_GUIDE.md`](DEPLOYMENT_GUIDE.md) for complete step-by-step instructions to deploy on GitHub Pages and Render.**
+### Creating a New Account
+1. Click "SIGN UP" on the login screen
+2. Fill in your full name
+3. Click "Generate" to create a card number
+4. Set a 4-digit PIN
+5. Enter initial deposit (minimum $100)
+6. Click "CREATE ACCOUNT"
 
-ATM Simulator System
-│   ├── src/
-│   │   └── ASimulatorSystem/
-│   │       ├── Login.java          # Main login screen
-│   │       ├── Signup.java         # User registration (Step 1)
-│   │       ├── Signup2.java        # User registration (Step 2)
-│   │       ├── Signup3.java        # User registration (Step 3)
-│   │       ├── Transactions.java   # Main ATM menu
-│   │       ├── Deposit.java        # Deposit functionality
-│   │       ├── Withdrawl.java      # Withdrawal functionality
-│   │       ├── FastCash.java       # Fast cash feature
-│   │       ├── BalanceEquiry.java  # Balance enquiry
-│   │       ├── MiniStatement.java  # Transaction history
-│   │       ├── Pin.java           # PIN change
-│   │       └── Conn.java          # Database connection
-│   ├── build/
-│   │   └── classes/               # Compiled Java classes
-│   ├── icons/                     # GUI images and icons
-│   └── nbproject/                 # NetBeans project files
-├── lib/
-│   ├── jcalendar-1.4.jar
-│   ├── jgoodies-common-1.2.0.jar
-│   └── jgoodies-looks-2.4.1.jar
-└── mysql-connector-j-8.2.0.jar    # MySQL JDBC driver
+### Performing Transactions
+1. Login with your credentials
+2. Select transaction type from the main menu
+3. Follow the prompts for each transaction
+4. View updated balance and transaction history
+
+### Available Transactions
+- **Deposit**: Add money to your account
+- **Cash Withdrawal**: Withdraw money (max $2,000 per transaction)
+- **Fast Cash**: Quick withdrawal options ($20, $50, $100, $200, $500, $1000)
+- **Mini Statement**: View recent transactions
+- **PIN Change**: Update your security PIN
+- **Balance Enquiry**: Check current balance
+
+## 🔒 Security Features
+- PIN masking in input fields
+- Client-side validation
+- Session management
+- Secure local storage
+
+## 📦 File Structure
+```
+docs/
+├── index.html          # Main HTML file
+├── styles.css          # CSS styling
+├── script.js           # JavaScript functionality
+└── README.md          # This documentation
 ```
 
-## 🗄️ Database Schema
+## 🚀 Deployment
+This project is configured for GitHub Pages deployment. Simply enable GitHub Pages in your repository settings and point to the `docs` folder.
 
-### Tables
-- **login**: User authentication (formno, cardno, pin)
-- **signup1**: Personal details (formno, name, fname, dob, gender, email, marital, address, city, state, pin)
-- **signup2**: Additional information (formno, religion, category, income, education, occupation, pan, aadhar, scitizen, eaccount)
-- **signup3**: Account details (formno, accounttype, cardno, pin, facility)
-- **bank**: Transaction records (pin, date, type, amount, mode)
-- **transactions**: Transaction history (id, pin, date, type, amount)
-
-## 🔧 Configuration
-
-### MySQL Connection
-The default MySQL configuration assumes:
-- Host: localhost
-- Port: 3306
-- Database: bankmanagementsystem
-- Username: root
-- Password: (set in Conn.java)
-
-### GUI Customization
-- Icons and images are located in `src/ASimulatorSystem/icons/`
-- Look and feel is managed by JGoodies libraries
+## 📄 License
+This project is for educational purposes and demonstration of web development skills.
 
 ## 🤝 Contributing
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
-
-**Rahul Pathak**
-- Email: rahulpathak7dec@gmail.com
-- GitHub: [@rahulpathak7dec](https://github.com/rahulpathak7dec)
-
-## 🙏 Acknowledgments
-
-- Thanks to the Java Swing community for GUI components
-- MySQL for robust database management
-- JCalendar and JGoodies for enhanced UI components
-
-## 📞 Support
-
-If you have any questions or need help with setup, please open an issue or contact me at rahulpathak7dec@gmail.com.
+Feel free to fork this project and submit pull requests for improvements.
 
 ---
 
-⭐ **Star this repository if you found it helpful!**
+**Note**: This is a simulation for demonstration purposes. Do not use real financial information.

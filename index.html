@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Simulator System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏧</text></svg>">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="screen active">
+        <div class="atm-container">
+            <div class="atm-header">
+                <div class="logo">🏧</div>
+                <h1>WELCOME TO ATM</h1>
+            </div>
+            <div class="login-form">
+                <div class="input-group">
+                    <label for="cardNo">Card No:</label>
+                    <input type="text" id="cardNo" placeholder="Enter your card number" maxlength="16">
+                </div>
+                <div class="input-group">
+                    <label for="pin">PIN:</label>
+                    <input type="password" id="pin" placeholder="Enter your PIN" maxlength="4">
+                </div>
+                <div class="button-group">
+                    <button class="btn primary" onclick="signIn()">SIGN IN</button>
+                    <button class="btn secondary" onclick="clearForm()">CLEAR</button>
+                </div>
+                <button class="btn tertiary" onclick="showSignup()">SIGN UP</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Screen -->
+    <div id="signupScreen" class="screen">
+        <div class="atm-container">
+            <div class="atm-header">
+                <div class="logo">🏧</div>
+                <h1>NEW ACCOUNT SIGNUP</h1>
+            </div>
+            <div class="signup-form">
+                <div class="input-group">
+                    <label for="newName">Full Name:</label>
+                    <input type="text" id="newName" placeholder="Enter your full name">
+                </div>
+                <div class="input-group">
+                    <label for="newCardNo">Card Number:</label>
+                    <input type="text" id="newCardNo" placeholder="Generate card number" readonly>
+                    <button class="btn small" onclick="generateCardNumber()">Generate</button>
+                </div>
+                <div class="input-group">
+                    <label for="newPin">PIN:</label>
+                    <input type="password" id="newPin" placeholder="Enter 4-digit PIN" maxlength="4">
+                </div>
+                <div class="input-group">
+                    <label for="initialDeposit">Initial Deposit:</label>
+                    <input type="number" id="initialDeposit" placeholder="Enter initial amount" min="100">
+                </div>
+                <div class="button-group">
+                    <button class="btn primary" onclick="createAccount()">CREATE ACCOUNT</button>
+                    <button class="btn secondary" onclick="showLogin()">BACK TO LOGIN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transactions Screen -->
+    <div id="transactionsScreen" class="screen">
+        <div class="atm-machine">
+            <div class="atm-screen">
+                <div class="screen-header">
+                    <h2>Please Select Your Transaction</h2>
+                    <div class="balance-display" id="balanceDisplay">Balance: $0.00</div>
+                </div>
+                <div class="transaction-buttons">
+                    <button class="btn-transaction left" onclick="showDeposit()">DEPOSIT</button>
+                    <button class="btn-transaction right" onclick="showWithdraw()">CASH WITHDRAWAL</button>
+                    
+                    <button class="btn-transaction left" onclick="fastCash()">FAST CASH</button>
+                    <button class="btn-transaction right" onclick="miniStatement()">MINI STATEMENT</button>
+                    
+                    <button class="btn-transaction left" onclick="changePin()">PIN CHANGE</button>
+                    <button class="btn-transaction right" onclick="balanceEnquiry()">BALANCE ENQUIRY</button>
+                    
+                    <button class="btn-transaction exit" onclick="exitATM()">EXIT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transaction Forms -->
+    <div id="transactionModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Transaction</h3>
+            <div id="modalBody">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+            <div class="modal-buttons">
+                <button class="btn primary" id="confirmBtn" onclick="processTransaction()">CONFIRM</button>
+                <button class="btn secondary" onclick="closeModal()">CANCEL</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mini Statement Modal -->
+    <div id="statementModal" class="modal">
+        <div class="modal-content">
+            <h3>Mini Statement</h3>
+            <div id="statementBody">
+                <div class="statement-header">
+                    <p><strong>Card Number:</strong> <span id="stmtCardNo"></span></p>
+                    <p><strong>Current Balance:</strong> $<span id="stmtBalance"></span></p>
+                </div>
+                <div class="statement-transactions">
+                    <h4>Recent Transactions:</h4>
+                    <div id="transactionHistory"></div>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn secondary" onclick="closeStatementModal()">CLOSE</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
