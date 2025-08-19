@@ -196,15 +196,13 @@ The default MySQL configuration assumes:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+🔗 Live Demo
 
-## 👨‍💻 Author
+- 🌐 **Web Version**: [ATM Simulator (GitHub Pages)](https://rahulpthk7.github.io/ATM-Simulator-System/)  
 
-**Rahul Pathak**
-- Email: rahulpathak7dec@gmail.com
-- GitHub: [@rahulpathak7dec](https://github.com/rahulpathak7dec)
+
+
 
 ## 🙏 Acknowledgments
 
@@ -212,10 +210,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - MySQL for robust database management
 - JCalendar and JGoodies for enhanced UI components
 
-## 📞 Support
-
-If you have any questions or need help with setup, please open an issue or contact me at rahulpathak7dec@gmail.com.
-
----
 
 ⭐ **Star this repository if you found it helpful!**
