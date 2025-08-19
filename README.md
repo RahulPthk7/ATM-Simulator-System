@@ -135,34 +135,6 @@ A comprehensive ATM (Automated Teller Machine) simulator implemented in both **J
 
 ---
 
-## 📖 Deployment Guide
-**See [`DEPLOYMENT_GUIDE.md`](DEPLOYMENT_GUIDE.md) for complete step-by-step instructions to deploy on GitHub Pages and Render.**
-
-ATM Simulator System
-│   ├── src/
-│   │   └── ASimulatorSystem/
-│   │       ├── Login.java          # Main login screen
-│   │       ├── Signup.java         # User registration (Step 1)
-│   │       ├── Signup2.java        # User registration (Step 2)
-│   │       ├── Signup3.java        # User registration (Step 3)
-│   │       ├── Transactions.java   # Main ATM menu
-│   │       ├── Deposit.java        # Deposit functionality
-│   │       ├── Withdrawl.java      # Withdrawal functionality
-│   │       ├── FastCash.java       # Fast cash feature
-│   │       ├── BalanceEquiry.java  # Balance enquiry
-│   │       ├── MiniStatement.java  # Transaction history
-│   │       ├── Pin.java           # PIN change
-│   │       └── Conn.java          # Database connection
-│   ├── build/
-│   │   └── classes/               # Compiled Java classes
-│   ├── icons/                     # GUI images and icons
-│   └── nbproject/                 # NetBeans project files
-├── lib/
-│   ├── jcalendar-1.4.jar
-│   ├── jgoodies-common-1.2.0.jar
-│   └── jgoodies-looks-2.4.1.jar
-└── mysql-connector-j-8.2.0.jar    # MySQL JDBC driver
-```
 
 ## 🗄️ Database Schema
 
