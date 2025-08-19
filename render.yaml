@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: atm-simulator-java
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    buildCommand: chmod +x build.sh && ./build.sh
+    startCommand: ./start.sh
+    envVars:
+      - key: JAVA_OPTS
+        value: "-Djava.awt.headless=true -Xms256m -Xmx512m"
+      - key: DISPLAY
+        value: ":1"
+    healthCheckPath: /health

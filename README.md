@@ -78,8 +78,67 @@ java -cp "build/classes;lib/jcalendar-1.4.jar;lib/jgoodies-common-1.2.0.jar;lib/
 ## 📁 Project Structure
 
 ```
-ATM-Simulator-System/
-├── ATM-Simulator-System/
+# 🏧 ATM Simulator System
+
+A comprehensive ATM (Automated Teller Machine) simulator implemented in both **Java Swing** (desktop) and **HTML/CSS/JavaScript** (web) versions.
+
+## 🌟 Live Demos
+
+### 🌐 Web Version (GitHub Pages)
+**Try it now**: `https://YOUR-USERNAME.github.io/atm-simulator-system/`
+
+**Demo Accounts**:
+- Card: `1234567812345678`, PIN: `1234` (Balance: $5,000)
+- Card: `9876543210987654`, PIN: `9876` (Balance: $2,500)
+
+### ☁️ Java Version (Render)
+**Access**: `https://your-app-name.onrender.com` (After deployment)
+
+---
+
+## 📋 Features
+
+### Core Functionality
+- ✅ **User Authentication** - Secure login with card number and PIN
+- ✅ **Account Management** - Create new accounts with initial deposits
+- ✅ **Money Transactions**:
+  - 💰 Deposit funds
+  - 🏧 Withdraw cash
+  - ⚡ Fast cash (preset amounts)
+  - 💳 Balance enquiry
+  - 📄 Mini statement with transaction history
+  - 🔒 PIN change functionality
+
+### Technical Features
+- ✅ **Dual Implementation**: Java desktop app + Web application
+- ✅ **Database Integration**: MySQL support for Java version
+- ✅ **Local Storage**: Browser-based storage for web version
+- ✅ **Responsive Design**: Works on desktop, tablet, and mobile
+- ✅ **Cloud Deployment**: Ready for GitHub Pages and Render
+
+---
+
+## 🚀 Quick Start
+
+### Web Version (Instant Access)
+1. Open `docs/index.html` in your browser
+2. Use demo credentials to login
+3. Explore all ATM features
+
+### Java Version (Local Setup)
+1. Ensure you have Java 8+ installed
+2. Open in NetBeans IDE or compile manually:
+   ```bash
+   javac -cp "lib/*" src/ASimulatorSystem/*.java
+   java -cp "src:lib/*" ASimulatorSystem.Login
+   ```
+
+---
+
+## 📖 Deployment Guide
+**See [`DEPLOYMENT_GUIDE.md`](DEPLOYMENT_GUIDE.md) for complete step-by-step instructions to deploy on GitHub Pages and Render.**
+
+ATM Simulator System
 │   ├── src/
 │   │   └── ASimulatorSystem/
 │   │       ├── Login.java          # Main login screen
