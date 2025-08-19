@@ -87,6 +87,10 @@ class ATMSystem {
         const account = this.accounts.find(acc => acc.cardNumber === cardNumber);
         if (account) {
             account.balance += amount;
+            // Update currentUser balance if it's the same account
+            if (this.currentUser && this.currentUser.cardNumber === cardNumber) {
+                this.currentUser.balance = account.balance;
+            }
             this.saveAccounts();
             this.updateBalanceDisplay();
         }
@@ -303,7 +307,6 @@ function selectFastCash(amount) {
     
     atm.updateBalance(atm.currentUser.cardNumber, -amount);
     atm.addTransaction(atm.currentUser.cardNumber, 'Fast Cash Withdrawal', -amount);
-    atm.currentUser.balance -= amount;
     
     closeModal();
     atm.showMessage(`Successfully withdrew $${amount.toFixed(2)}`, 'success');
@@ -408,7 +411,6 @@ function processDeposit() {
 
     atm.updateBalance(atm.currentUser.cardNumber, amount);
     atm.addTransaction(atm.currentUser.cardNumber, 'Deposit', amount);
-    atm.currentUser.balance += amount;
     
     closeModal();
     atm.showMessage(`Successfully deposited $${amount.toFixed(2)}`, 'success');
@@ -434,7 +436,6 @@ function processWithdraw() {
 
     atm.updateBalance(atm.currentUser.cardNumber, -amount);
     atm.addTransaction(atm.currentUser.cardNumber, 'Withdrawal', -amount);
-    atm.currentUser.balance -= amount;
     
     closeModal();
     atm.showMessage(`Successfully withdrew $${amount.toFixed(2)}`, 'success');
